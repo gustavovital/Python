@@ -14,7 +14,6 @@ import datetime as dt
 import os
 import pandas_datareader.data as web
 
-
 # Script
 def save_sp500_tickers():
     resp = requests.get('http://en.wikipedia.org/wiki/List_of_S%26P_500_companies')
