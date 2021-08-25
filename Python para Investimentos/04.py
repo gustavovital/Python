@@ -33,7 +33,7 @@ BVSP.set_index("Date", inplace = True)
 BVSP.drop(columns=BVSP.columns[0], axis = 1, inplace = True)
 BVSP.dropna(inplace=True)
 
-BVSP.Adj = BVSP["Adjusted"]
+BVSPAdj = BVSP["Adjusted"]
 
 # config sns
 sns.set()
@@ -44,10 +44,10 @@ carteira02_normalizada = (carteira02 / carteira02.iloc[0])
 carteira02_normalizada.plot()
 carteira02_normalizada["Saldo"] = carteira02_normalizada.sum(axis=1)
 
-BVSP.Adj_normalizado = (BVSP.Adj / BVSP.Adj.iloc[0])
-BVSP.Adj_normalizado.plot()
+BVSPAdj_normalizado = (BVSPAdj / BVSPAdj.iloc[0])*5
+BVSPAdj_normalizado.plot()
 
 carteira02_normalizada["Saldo"].plot(label="Saldo")
-BVSP.Adj_normalizado.plot(label="bvsp")
+BVSPAdj_normalizado.plot(label="bvsp")
 plt.legend()
 
